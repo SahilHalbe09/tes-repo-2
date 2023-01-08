@@ -178,6 +178,8 @@ const handleSubmit = async (e) => {
 		}),
 	});
 
+	console.log(prompt, no_of_words);
+
 	clearInterval(loadInterval);
 	messageDiv.innerHTML = " ";
 
