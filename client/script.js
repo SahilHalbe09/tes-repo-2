@@ -149,7 +149,7 @@ const handleSubmit = async (e) => {
 	const data = new FormData(form);
 
 	// user's chatstripe
-	chatContainer.innerHTML += chatStripe(false, data.get("prompt"));
+	chatContainer.innerHTML += chatStripe(false, data.get("prompt" + ", " + "no_of_words"));
 
 	// to clear the textarea input
 	form.reset();
@@ -174,6 +174,7 @@ const handleSubmit = async (e) => {
 		},
 		body: JSON.stringify({
 			prompt: data.get("prompt"),
+			no_of_words: data.get("no_of_words"),
 		}),
 	});
 
