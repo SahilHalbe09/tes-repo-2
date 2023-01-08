@@ -124,6 +124,8 @@ app.post("/", async (req, res) => {
 		const prompt = req.body.prompt;
 		const no_of_words = req.body.no_of_words;
 
+		console.log(prompt, no_of_words);
+
 		const response = await openai.createCompletion({
 			model: "text-davinci-003",
 			prompt: `Write a 250 words blog on topic: "${prompt}". Make ${no_of_words} paragraphs in the blog post`,
