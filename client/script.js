@@ -131,12 +131,6 @@ function chatStripe(isAi, value, uniqueId) {
 	return `
         <div class="wrapper ${isAi && "ai"}">
             <div class="chat">
-                <div class="profile">
-                    <img 
-                      src=${isAi ? bot : user} 
-                      alt="${isAi ? "bot" : "user"}" 
-                    />
-                </div>
                 <div class="message" id=${uniqueId}>${value}</div>
             </div>
         </div>
@@ -149,7 +143,7 @@ const handleSubmit = async (e) => {
 	const data = new FormData(form);
 
 	// user's chatstripe
-	chatContainer.innerHTML += chatStripe(false, data.get("prompt"));
+	chatContainer.innerHTML = chatStripe(false, data.get("prompt"));
 
 	// to clear the textarea input
 	form.reset();
@@ -167,7 +161,9 @@ const handleSubmit = async (e) => {
 	// messageDiv.innerHTML = "..."
 	loader(messageDiv);
 
-	const response = await fetch("https://blogmaker-co.onrender.com", {
+	// Fetch Link: https://blogmaker-co.onrender.com
+
+	const response = await fetch("http://localhost:5000", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
