@@ -168,7 +168,7 @@ const handleSubmit = async (e) => {
 		},
 		body: JSON.stringify({
 			prompt: data.get("prompt"),
-			no_of_words: data.get("no_of_words"),
+			// no_of_words: data.get("no_of_words"),
 		}),
 	});
 

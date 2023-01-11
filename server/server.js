@@ -126,6 +126,8 @@ app.post("/", async (req, res) => {
 
 		console.log(prompt, no_of_words);
 
+		console.log(prompt, no_of_words);
+
 		const response = await openai.createCompletion({
 			model: "text-davinci-003",
 			prompt: `Write a blog on topic: "${prompt}". Make this blog eye-catching, engaging, and SEO optimized. Make this blog of ${no_of_words} words minimum length.`,
