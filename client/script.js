@@ -94,10 +94,11 @@ function loader(element) {
 
 	loadInterval = setInterval(() => {
 		// Update the text content of the loading indicator
+		element.textContent = "Generating";
 		element.textContent += ".";
 
 		// If the loading indicator has reached three dots, reset it
-		if (element.textContent === "....") {
+		if (element.textContent === "Generating....") {
 			element.textContent = "";
 		}
 	}, 300);
