@@ -69,9 +69,8 @@
 	margin-top: 244px;
 }
 
-/* #chat_container::-webkit-scrollbar */
-
-.forms::-webkit-scrollbar {
+.forms::-webkit-scrollbar,
+#chat_container::-webkit-scrollbar {
 	display: none;
 }
 
@@ -82,5 +81,5 @@
 	-webkit-box-shadow: 10px 10px 4px -2px rgba(253, 255, 0, 1);
 	-moz-box-shadow: 10px 10px 4px -2px rgba(253, 255, 0, 1);
 	resize: vertical;
-	max-height: 444px;
+	max-height: 400px;
 }
