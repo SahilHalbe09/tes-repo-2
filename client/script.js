@@ -81,9 +81,6 @@
 // 	}
 // });
 
-import bot from "./assets/bot.svg";
-import user from "./assets/user.svg";
-
 const form = document.querySelector("form");
 const chatContainer = document.querySelector("#chat_container");
 
@@ -97,7 +94,7 @@ function loader(element) {
 		element.textContent += ".";
 
 		// If the loading indicator has reached three dots, reset it
-		if (element.textContent === "....") {
+		if (element.textContent === ".....") {
 			element.textContent = "";
 		}
 	}, 300);
@@ -171,9 +168,10 @@ const handleSubmit = async (e) => {
 		},
 		body: JSON.stringify({
 			prompt: data.get("prompt"),
-			// no_of_words: data.get("no_of_words"),
+			no_of_words: data.get("no_of_words"),
 		}),
 	});
+	console.log(prompt, no_of_words);
 
 	clearInterval(loadInterval);
 	messageDiv.innerHTML = " ";

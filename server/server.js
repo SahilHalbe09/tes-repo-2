@@ -124,6 +124,8 @@ app.post("/", async (req, res) => {
 		const prompt = req.body.prompt;
 		const no_of_words = req.body.no_of_words;
 
+		console.log(prompt, no_of_words);
+
 		const response = await openai.createCompletion({
 			model: "text-davinci-003",
 			prompt: `Write a blog on topic: "${prompt}". Make this blog eye-catching, engaging, and SEO optimized. Make this blog of ${no_of_words} words minimum length.`,
@@ -142,5 +144,7 @@ app.post("/", async (req, res) => {
 		res.status(500).send(error || "Something went wrong");
 	}
 });
+
+console.log(prompt, no_of_words);
 
 app.listen(5000, () => console.log("AI server started"));
