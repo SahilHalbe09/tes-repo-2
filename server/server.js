@@ -124,14 +124,10 @@ app.post("/", async (req, res) => {
 		const prompt = req.body.prompt;
 		const no_of_words = req.body.no_of_words;
 
-		console.log(prompt, no_of_words);
-
-		console.log(prompt, no_of_words);
-
 		const response = await openai.createCompletion({
 			model: "text-davinci-003",
-			prompt: `Write a blog on topic: "${prompt}". Make this blog eye-catching, engaging, and SEO optimized. Make this blog of ${no_of_words} words minimum length.`,
-			temperature: 0.5, // Higher values means the model will take more risks.
+			prompt: `Write a ${no_of_words} words blog on topic: "${prompt}". Make this blog eye-catching, engaging, and SEO optimized.`,
+			temperature: 0.2, // Higher values means the model will take more risks.
 			max_tokens: 1024, // The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
 			top_p: 1, // alternative to sampling with temperature, called nucleus sampling
 			frequency_penalty: 0.5, // Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
