@@ -162,8 +162,9 @@ const handleSubmit = async (e) => {
 	loader(messageDiv);
 
 	// Fetch Link: https://blogmaker-co.onrender.com
+	// Local fetch link: http://localhost:5000
 
-	const response = await fetch("http://localhost:5000", {
+	const response = await fetch("https://blogmaker-co.onrender.com", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
