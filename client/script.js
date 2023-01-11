@@ -171,7 +171,6 @@ const handleSubmit = async (e) => {
 			no_of_words: data.get("no_of_words"),
 		}),
 	});
-	console.log(prompt, no_of_words);
 
 	clearInterval(loadInterval);
 	messageDiv.innerHTML = " ";
