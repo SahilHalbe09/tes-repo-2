@@ -69,8 +69,9 @@
 	margin-top: 244px;
 }
 
-.forms::-webkit-scrollbar,
-#chat_container::-webkit-scrollbar {
+/* #chat_container::-webkit-scrollbar */
+
+.forms::-webkit-scrollbar {
 	display: none;
 }
 
