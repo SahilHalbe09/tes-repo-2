@@ -145,6 +145,4 @@ app.post("/", async (req, res) => {
 	}
 });
 
-console.log(prompt, no_of_words);
-
 app.listen(5000, () => console.log("AI server started"));
